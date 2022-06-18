@@ -15,18 +15,18 @@ apt update
 apt install git
 
 # keep in method to avoid parameter mingling
-apply_style(){
-  find . -name '*.h' -or -name '*.hpp' -or -name '*.cpp' | xargs clang-format-3.8 -i -style=file $1
-}
+# apply_style(){
+#  find . -name '*.h' -or -name '*.hpp' -or -name '*.cpp' | xargs clang-format-3.8 -i -style=file $1
+#}
 
-curl -1sLf \
-  'https://dl.cloudsmith.io/public/automodality/public/cfg/setup/bash.deb.sh' \
-  | bash
+# curl -1sLf \
+#  'https://dl.cloudsmith.io/public/automodality/public/cfg/setup/bash.deb.sh' \
+#  | bash
 
-apt-get install -y \
-    libllvm3.8 \
-    clang-format-3.8 \
-    git
+# apt-get install -y \
+#    libllvm3.8 \
+#    clang-format-3.8 \
+#    git
 
 # according to docs, the --style=file will find the .clang-file at the root placed by the Dockerfile copy
 # https://releases.llvm.org/3.8.0/tools/clang/docs/ClangFormat.html
@@ -35,11 +35,17 @@ apt-get install -y \
 #                              directories of the source file (or current
 #                              directory for stdin).
 
+wget https://raw.githubusercontent.com/deepduke/Format-Cpp/main/run-clang-format
+wget https://raw.githubusercontent.com/deepduke/Format-Cpp/main/.clang-format
+
 echo "======================="
 echo "Applying style to files"
 echo "======================="
 
-apply_style
+ ./run-clang-format -i -r .
+
+#apply_style
+
 
 modified_files=$(git status | grep modified)
 
