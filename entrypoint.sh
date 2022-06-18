@@ -14,6 +14,9 @@ apt-get install wget
 apt-get install -y git
 
 apt-get install -y python3
+
+apt-get install -y clang-format
+
 #add-apt-repository ppa:git-core/ppa
 
 #apt update
