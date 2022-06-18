@@ -8,6 +8,8 @@ message=$3
 apt-get update
 apt-get install -y curl
 
+apt-get install wget
+
 add-apt-repository ppa:git-core/ppa
 
 apt update
