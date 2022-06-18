@@ -1,5 +1,5 @@
 # Container image that runs your code
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
 COPY .clang-format /.clang-format
 
