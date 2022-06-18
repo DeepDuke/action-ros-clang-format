@@ -5,13 +5,15 @@ name=$1
 email=$2
 message=$3
 
-apt-get update
+apt-get -y  update
+
 apt-get install -y curl
 
 apt-get install wget
 
 apt-get install -y git
 
+apt-get install -y python3
 #add-apt-repository ppa:git-core/ppa
 
 #apt update
