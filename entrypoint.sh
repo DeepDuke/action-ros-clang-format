@@ -51,7 +51,7 @@ if [[ $? == 0 ]] ;then
   echo "Committing to Current Branch"
   echo "============================"
 
-  git config --global --add safe.directory "GITHUB_WORKSPACE"
+  git config --global --add safe.directory /github/workspace
   git config --global user.email "$email"
   git config --global user.name "$name"
   git config --global push.default current
