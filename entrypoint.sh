@@ -8,6 +8,12 @@ message=$3
 apt-get update
 apt-get install -y curl
 
+add-apt-repository ppa:git-core/ppa
+
+apt update
+
+apt install git
+
 # keep in method to avoid parameter mingling
 apply_style(){
   find . -name '*.h' -or -name '*.hpp' -or -name '*.cpp' | xargs clang-format-3.8 -i -style=file $1
@@ -45,7 +51,7 @@ if [[ $? == 0 ]] ;then
   echo "Committing to Current Branch"
   echo "============================"
 
-  git config --global --add safe.directory "GITHUB_WORKSPACE"
+  #git config --global --add safe.directory "GITHUB_WORKSPACE"
   git config --global user.email "$email"
   git config --global user.name "$name"
   git config --global push.default current
