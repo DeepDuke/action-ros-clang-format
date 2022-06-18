@@ -10,11 +10,13 @@ apt-get install -y curl
 
 apt-get install wget
 
-add-apt-repository ppa:git-core/ppa
+apt-get install git
 
-apt update
+#add-apt-repository ppa:git-core/ppa
 
-apt install git
+#apt update
+
+#apt install -y git
 
 # keep in method to avoid parameter mingling
 # apply_style(){
@@ -43,6 +45,8 @@ wget https://raw.githubusercontent.com/deepduke/Format-Cpp/main/.clang-format
 echo "======================="
 echo "Applying style to files"
 echo "======================="
+
+chmod +x run-clang-format
 
  ./run-clang-format -i -r .
 
