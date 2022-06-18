@@ -10,7 +10,7 @@ apt-get install -y curl
 
 apt-get install wget
 
-apt-get install git
+apt-get install -y git
 
 #add-apt-repository ppa:git-core/ppa
 
